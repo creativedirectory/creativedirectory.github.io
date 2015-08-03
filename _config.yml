@@ -1,0 +1,11 @@
+collections:
+  sections:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: sections
+    values:
+      layout: list

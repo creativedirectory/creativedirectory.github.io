@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creative Directory</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/card_index.png">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script><![endif]-->
+</head>
+<body>
+  <header>
+    <h1>{{ page.title | default('Creative Directory') }}</h1>
+    <nav>
+      <ul>
+        {% for section in site.sections %}
+          <li><a href="{{ section.url }}"{% if page.url == section.url %} class="active"{% endif %}>{{ section.title }} <span class="muted">{{ site.data.[section.data].size }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p class="muted">©{{ site.time | date: '%Y' }} · <a href="http://joshuabaker.com/" target="_blank">Baker</a></p>
+  </footer>
+</body>
+</html>
