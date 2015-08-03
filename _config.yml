@@ -9,3 +9,9 @@ defaults:
       type: sections
     values:
       layout: list
+
+exclude:
+  - CNAME
+  - Gemfile.lock
+  - README.md
+  - Gemfile
