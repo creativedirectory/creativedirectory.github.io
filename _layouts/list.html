@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="list">
-  {% for entry in site.data.[page.data] %}
+  {% for entry in site.data.[page.data] | sort %}
     <li><a href="{{ entry[1].url }}" target="_blank">{{ entry[1].title }}</a></li>
   {% endfor %}
 </ul>
