@@ -3,7 +3,8 @@ layout: default
 ---
 
 <ul class="list">
-  {% for entry_hash in (site.data.[page.data] | sort: 'title') %}
+  {% assign sorted_entries = (site.data.[page.data] | sort: 'title') %}
+  {% for entry_hash in sorted_entries %}
     {% assign entry = entry_hash[1] %}
     <li><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a></li>
   {% endfor %}
