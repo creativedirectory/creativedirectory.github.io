@@ -2,14 +2,9 @@
 layout: default
 ---
 
-{% assign entries = site.array %}
-{% for entry_hash in site.data.[page.data] %}
-  {% assign entry = entry_hash[1] %}
-  {% assign entries = entries | push: entry %}
-{% endfor %}
-
 <ul class="list">
-  {% for entry in (entries | sort: 'title') %}
+  {% for entry_hash in (site.data.[page.data] | sort: 'title') %}
+    {% assign entry = entry_hash[1] %}
     <li><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a></li>
   {% endfor %}
 </ul>
